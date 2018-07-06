@@ -1,6 +1,8 @@
 # flipkartoffers
 Use Flipkart Api to get the Latest Deal of the Day( DOTD) offers going on.Flipkart API is very powerful and we can use it to get the details of products and offers available on the platform.
 
+<a href="https://sreyaj.com/flipkart-affiliate-api/" target="_blank" rel="dofollow"><h3>Full Explanation of How its Done</h3></a>
+
 We are going to see how to use the Flipkart API to get the DOTD offers that are live on the Flipkart Site using a php webpage. We will be using cURL to call the endpoints and later parse the received response in a beautiful card layout using Bootstrap.
 
 <h2>Get Started</h2>
