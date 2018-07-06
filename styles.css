@@ -1,0 +1,120 @@
+/* BODY
+------------------------------*/
+
+#add_products {
+    background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+/* CARD
+---------------------------------------*/
+
+.dealcard {
+    width: 100% !important;
+    text-align: center;
+    height: 350px;
+    border: none;
+    box-shadow: 0 0 6px -2px;
+}
+
+.dealcard:hover {
+    box-shadow: 1px 1px 15px -2px rgba(0, 0, 0, 0.5);
+}
+
+.dealimg {
+    max-width: 250px !important;
+    height: 200px;
+    object-fit: cover;
+    padding: 8px;
+}
+
+.dealstatus {
+    position: absolute;
+    right: 0px;
+    background: green;
+    padding: 2px 5px;
+    color: #fff;
+    border-bottom-left-radius: 0.35rem;
+}
+
+.dealtitle {
+    font-size: 14px;
+}
+
+.dealdesc {
+    font-size: 13px;
+}
+
+.dealbtn {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 0.35rem;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.dealbtn:hover {
+    background-image: linear-gradient(10deg, #667eea 0%, #764ba2 100%);
+    text-decoration: none;
+    box-shadow: 2px 2px 10px -3px black;
+    color: #fff;
+}
+
+/* CARD END
+-------------------------------------------*/
+
+.mobbtn {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    /*background-image: linear-gradient(45deg, #2874F0 0%, #FCD511 100%);*/
+    background-color: #2874F0;
+    padding: 3px 10px;
+    color: #fff;
+    border-radius: 0.35rem;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.mobbtn:hover {
+    background-color: #F7E830;
+    text-decoration: none;
+    box-shadow: 2px 2px 10px -3px black;
+    color: #2874F0;
+    font-weight: 500;
+}
+
+/* MEDIA QUERIES
+---------------------------------------------*/
+
+@media screen and (max-width:768px) {
+    .cardbody {
+        padding: 0.25rem;
+    }
+    .dealcard {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+        height: 280px;
+    }
+    .dealimg {
+        object-fit: contain;
+        padding: 0px 8px;
+        height: 150px;
+    }
+    .dealdesc {
+        font-size: 13px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .card-body {
+        padding: 0.4rem 0.25rem 0.25rem .25rem;
+    }
+}
