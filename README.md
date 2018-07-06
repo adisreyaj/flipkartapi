@@ -20,9 +20,54 @@ We have to then two piece of information that has to be added to the headers to 
 
 We are using cURL to call the api and add the required parameters as headers.
 <h2>Flipkart API Call Code</h2>
-<h4>flipkartdotdapi.php</h4>:
-This php file shows how the api call is made to get the latest offers from Flipkart using the Flipkart API.
+<h4>flipkartdotdapi.php</h4>:This php file shows how the api call is made to get the latest offers from Flipkart using the Flipkart API.
 
+```php
+<?php
+$curl = curl_init();
+$affiliateid = "Enter Your Affiliate ID here";
+$apitoken = "Enter the API Key Here";
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://affiliate-api.flipkart.net/affiliate/offers/v1/dotd/json",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_SSL_VERIFYPEER => FALSE,
+  CURLOPT_CUSTOMREQUEST => "GET",
+  CURLOPT_HTTPHEADER => array(
+    "Cache-Control: no-cache",
+    "Fk-Affiliate-Id:".$affiliateid,
+    "Fk-Affiliate-Token:".$apitoken
+  ),
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+curl_close($curl);
+?>
+```
+<h2>Parse the JSON Data </h2>
+
+Once we have made the call successfully, we will get the response in JSON format. This then needs to be parsed to display in HTML tags.
+
+```php
+<?php
+$data = json_decode($response,true);
+$dotd = $data["dotdList"];
+$num = count($dotd);
+for($x=0;$x<$num;$x++){
+    $dealimage[$x] = $dotd[$x]["imageUrls"][0]["url"];
+    $dealtitle[$x] = $dotd[$x]["title"];
+    $dealdesc[$x] =  $dotd[$x]["description"];
+    $dealname[$x] = $dotd[$x]["name"];
+    $deallink[$x] = $dotd[$x]["url"];
+    $dealstatus[$x] = $dotd[$x]["availability"];
+}
+?>
+```
+<a href="https://sreyaj.com/flipkart-affiliate-api/" target="_blank" rel="dofollow"><h3>Full Explanation Here</h3></a>
 <h2>Example - Flipkart API Offers Listing </h2>
 
 Visit <a href="https://sreyaj.com/flipkartapi/" target="_blank" rel="dofollow">Flipkart API-Offers Demo Page</a> to see the Flipkart API in action.
